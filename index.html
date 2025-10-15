@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Employee Registration Form</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section class="title-container">
+      <h1>Employee Registration Form</h1>
+    </section>
+    <section class="form-container">
+      <form action="#">
+        <!-- Name Container -->
+        <div class="form-control grid">
+          <label for="fname" class="title">Full Name</label>
+          <div class="name-content">
+            <div class="form-flex">
+              <input type="text" name="fname" id="fname" required />
+              <label for="fname" class="small">First Name</label>
+            </div>
+            <div class="form-flex">
+              <input type="text" name="lname" id="lname" required />
+              <label for="lname" class="small">Last Name</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Date Container -->
+        <div class="form-control grid">
+          <label for="date" class="title">Date of Birth</label>
+          <div class="form-flex">
+            <input type="date" name="date" id="date" required />
+            <label for="date" class="small">Date</label>
+          </div>
+        </div>
+
+        <!-- Email Container -->
+        <div class="form-control grid">
+          <label for="email" class="title">Email</label>
+          <input type="email" name="email" id="email" required />
+          <label for="email" class="small">example@example.com</label>
+        </div>
+
+        <!-- Phone Number Container -->
+        <div class="form-control grid">
+          <label for="phone" class="title">Phone Number</label>
+          <input type="number" name="phone" id="phone" required />
+          <label for="phone" class="small"
+            >Please enter a valid phone number.</label
+          >
+        </div>
+
+        <!-- Address Container -->
+        <div class="form-control gap-24">
+          <label for="street" class="title address-title">Address</label>
+
+          <div class="form-flex Full">
+            <input type="text" name="street" id="street" required />
+            <label for="street" class="small">Street Address</label>
+          </div>
+
+          <div class="form-flex full">
+            <input type="text" name="street2" id="street2" />
+            <label for="street2" class="small">Street Address Line 2</label>
+          </div>
+
+          <div class="form-flex full">
+            <select name="region" id="region" required>
+              <option value="">Select a region</option>
+              <option value="ncr">National Capital Region (NCR)</option>
+              <option value="region4a">CALABARZON (Region IV-A)</option>
+              <option value="region3">Central Luzon (Region III)</option>
+              <option value="car">
+                Cordillera Administrative Region (CAR)
+              </option>
+            </select>
+            <label for="region" class="small">Region</label>
+          </div>
+
+          <div class="form-flex grid">
+            <select name="city" id="city" disabled>
+              <option value="">Select a region first.</option>
+            </select>
+            <label for="city" class="small">City</label>
+          </div>
+
+          <div class="form-flex grid">
+            <input type="text" name="state" id="state" />
+            <label for="state" class="small">State / Province</label>
+          </div>
+
+          <div class="form-flex full">
+            <input type="text" name="postal" id="postal" />
+            <label for="postal" class="small">Postal / Zip Code</label>
+          </div>
+        </div>
+
+        <!-- Position Container -->
+        <div class="form-control full">
+          <label for="position" class="title">Applying Position</label>
+          <input type="text" name="position" id="position" />
+        </div>
+
+        <!-- Work Type Container -->
+        <div class="form-control full">
+          <label for="permanent" class="title">Type of Work</label>
+
+          <div class="form-control grid m-0 p-0 radio-group">
+            <input
+              type="radio"
+              name="work_type"
+              id="permanent"
+              value="permanent"
+            />
+            <label for="permanent">Permanent</label>
+          </div>
+
+          <div class="form-control grid m-0 p-0 radio-group">
+            <input
+              type="radio"
+              name="work_type"
+              id="temporary"
+              value="temporary"
+            />
+            <label for="temporary">Temporary</label>
+          </div>
+
+          <div class="form-control full m-0 p-0 radio-group">
+            <input type="radio" name="work_type" id="both" value="both" />
+            <label for="both">Both</label>
+          </div>
+
+          <div class="form-control full m-0 p-0 radio-group">
+            <input type="radio" name="work_type" id="other" value="other" />
+            <label for="other">Other</label>
+          </div>
+        </div>
+
+        <!-- Resume Container -->
+        <div class="form-control full">
+          <label for="resume" class="title">Please Upload Resume</label>
+          <input type="file" name="resume" id="resume" />
+        </div>
+
+        <!-- Letter Container -->
+        <div class="form-control full">
+          <label for="letter" class="title"
+            >Cover Letter or Additional Information</label
+          >
+          <textarea
+            name="letter"
+            id="letter"
+            placeholder="Type here..."
+          ></textarea>
+        </div>
+
+        <!-- Veteran Status Container -->
+        <div class="form-control full">
+          <label for="veteran" class="title"
+            >Veteran Status (Please select the option that describes your status
+            the best)</label
+          >
+
+          <div class="form-control grid m-0 p-0 radio-group">
+            <input
+              type="radio"
+              name="veteran-status"
+              id="veteran"
+              value="veteran"
+            />
+            <label for="veteran">I am a veteran</label>
+          </div>
+
+          <div class="form-control grid m-0 p-0 radio-group">
+            <input
+              type="radio"
+              name="veteran-status"
+              id="separated-veteran"
+              value="separated-veteran"
+            />
+            <label for="separated-veteran"
+              >I am a recently separated veteran</label
+            >
+          </div>
+
+          <div class="form-control grid m-0 p-0 radio-group">
+            <input
+              type="radio"
+              name="veteran-status"
+              id="not-veteran"
+              value="not-veteran"
+            />
+            <label for="not-veteran">I am not a veteran</label>
+          </div>
+
+          <div class="form-control grid m-0 p-0 radio-group">
+            <input
+              type="radio"
+              name="veteran-status"
+              id="disabled-veteran"
+              value="disabled-veteran"
+            />
+            <label for="disabled-veteran"
+              >I am a special disabled veteran</label
+            >
+          </div>
+
+          <div class="form-control grid m-0 p-0 radio-group">
+            <input
+              type="radio"
+              name="veteran-status"
+              id="protected-veteran"
+              value="protected-veteran"
+            />
+            <label for="protected-veteran"
+              >I am an other protected veteran</label
+            >
+          </div>
+
+          <div class="form-control grid m-0 p-0 radio-group">
+            <input
+              type="radio"
+              name="veteran-status"
+              id="no-answer"
+              value="no-answer"
+            />
+            <label for="no-answer">Prefer Not The Answer</label>
+          </div>
+        </div>
+
+        <!-- Gender Container -->
+        <div class="form-control full">
+          <label for="female" class="title">Gender</label>
+
+          <div class="form-control grid m-0 p-0 radio-group">
+            <input type="radio" name="gender" id="female" value="female" />
+            <label for="female">Female</label>
+          </div>
+
+          <div class="form-control grid m-0 p-0 radio-group">
+            <input type="radio" name="gender" id="male" value="male" />
+            <label for="male">Male</label>
+          </div>
+
+          <div class="form-control grid m-0 p-0 radio-group">
+            <input
+              type="radio"
+              name="gender"
+              id="trans-female"
+              value="trans-female"
+            />
+            <label for="trans-female">Transgender Female</label>
+          </div>
+
+          <div class="form-control grid m-0 p-0 radio-group">
+            <input
+              type="radio"
+              name="gender"
+              id="trans-male"
+              value="trans-male"
+            />
+            <label for="trans-male">Transgender Male</label>
+          </div>
+
+          <div class="form-control full m-0 p-0 radio-group">
+            <input
+              type="radio"
+              name="gender"
+              id="no-answer"
+              value="no-answer"
+            />
+            <label for="no-answer">Prefer Not The Answer</label>
+          </div>
+
+          <div class="form-control full m-0 p-0 radio-group">
+            <input
+              type="radio"
+              name="gender"
+              id="not-listed"
+              value="not-listed"
+            />
+            <label for="not-listed">Not Listed</label>
+          </div>
+        </div>
+
+        <!-- Disabilities Container -->
+        <div class="form-control full">
+          <label for="no-disability" class="title">Disabilities</label>
+
+          <div class="form-control full m-0 p-0 radio-group">
+            <input
+              type="radio"
+              name="disablities"
+              id="no-disability"
+              value="no-disability"
+            />
+            <label for="no-disability">I have no disabilities</label>
+          </div>
+
+          <div class="form-control full m-0 p-0 radio-group">
+            <input
+              type="radio"
+              name="disablities"
+              id="two-disability"
+              value="two-disability"
+            />
+            <label for="two-disability"
+              >I have two or more impairments and/or disabling medical
+              conditions.</label
+            >
+          </div>
+
+          <div class="form-control full m-0 p-0 radio-group">
+            <input
+              type="radio"
+              name="disablities"
+              id="sld-disability"
+              value="sld-disability"
+            />
+            <label for="sld-disability"
+              >I have a Specific Learning Difficulty (e.g.
+              Dyslexia/Dyspraxia/AD(H)D</label
+            >
+          </div>
+
+          <div class="form-control full m-0 p-0 radio-group">
+            <input
+              type="radio"
+              name="disablities"
+              id="social-disability"
+              value="social-disability"
+            />
+            <label for="social-disability"
+              >I have a social/communication impairment such as Asperger's
+              syndrome/other autistic spectrum disorder</label
+            >
+          </div>
+
+          <div class="form-control full m-0 p-0 radio-group">
+            <input
+              type="radio"
+              name="disablities"
+              id="lsi-disability"
+              value="lsi-disability"
+            />
+            <label for="lsi-disability"
+              >I have a long standing illness or health condition such as
+              cancer, HIV, diabetes, chronic heart disease, or epilepsy</label
+            >
+          </div>
+
+          <div class="form-control full m-0 p-0 radio-group">
+            <input
+              type="radio"
+              name="disablities"
+              id="physical-disability"
+              value="physical-disability"
+            />
+            <label for="physical-disability"
+              >I have a physical impairment or mobility issues (e.g. difficulty
+              using arms/using a wheelchair or crutches)</label
+            >
+          </div>
+
+          <div class="form-control full m-0 p-0 radio-group">
+            <input
+              type="radio"
+              name="disablities"
+              id="hearing-disability"
+              value="hearing-disability"
+            />
+            <label for="hearing-disability"
+              >I am deaf or have a serious hearing impairment</label
+            >
+          </div>
+
+          <div class="form-control full m-0 p-0 radio-group">
+            <input
+              type="radio"
+              name="disablities"
+              id="visual-disability"
+              value="visual-disability"
+            />
+            <label for="visual-disability"
+              >I am blind or have a serious visual impairment uncorrected by
+              glasses</label
+            >
+          </div>
+
+          <div class="form-control full m-0 p-0 radio-group">
+            <input
+              type="radio"
+              name="disablities"
+              id="no-answer"
+              value="no-answer"
+            />
+            <label for="no-answer">Prefer not to answer</label>
+          </div>
+
+          <div class="form-control full m-0 p-0 radio-group">
+            <input
+              type="radio"
+              name="disablities"
+              id="not-listed"
+              value="not-listed"
+            />
+            <label for="not-listed"
+              >I have a disability, impairment or medical condition not listed
+              here</label
+            >
+          </div>
+        </div>
+
+        <!-- Race Container -->
+        <div class="form-control full">
+          <label for="native-am" class="title">Race</label>
+
+          <div class="form-control grid m-0 p-0 radio-group">
+            <input type="radio" name="race" id="native-am" value="native-am" />
+            <label for="native-am">American Native or Alaska Native</label>
+          </div>
+
+          <div class="form-control grid m-0 p-0 radio-group">
+            <input type="radio" name="race" id="asian" value="asian" />
+            <label for="asian">Asian</label>
+          </div>
+
+          <div class="form-control grid m-0 p-0 radio-group">
+            <input type="radio" name="race" id="black" value="black" />
+            <label for="black">Black or African American</label>
+          </div>
+
+          <div class="form-control grid m-0 p-0 radio-group">
+            <input type="radio" name="race" id="native-hw" value="native-hw" />
+            <label for="native-hw"
+              >Native Hawaiian or Other Pacific Islander</label
+            >
+          </div>
+
+          <div class="form-control grid m-0 p-0 radio-group">
+            <input type="radio" name="race" id="white" value="white" />
+            <label for="white">White</label>
+          </div>
+
+          <div class="form-control grid m-0 p-0 radio-group">
+            <input type="radio" name="race" id="two-more" value="two-more" />
+            <label for="two-more">Two or more races</label>
+          </div>
+
+          <div class="form-control full m-0 p-0 radio-group">
+            <input type="radio" name="race" id="decline" value="decline" />
+            <label for="decline">Decline to specify</label>
+          </div>
+
+          <div class="form-control full m-0 p-0 radio-group">
+            <input type="radio" name="race" id="other" value="other" />
+            <label for="other">Other</label>
+          </div>
+        </div>
+
+        <!-- Notes Container -->
+        <div class="form-control full">
+          <label for="notes" class="title">Additional Notes</label>
+          <textarea
+            name="notes"
+            id="notes"
+            placeholder="Type here..."
+          ></textarea>
+        </div>
+
+        <div class="submit-container">
+          <input type="submit" name="submit" />
+        </div>
+      </form>
+    </section>
+  </body>
+</html>
