@@ -8,10 +8,10 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <section class="title-container">
-      <h1>Employee Registration Form</h1>
-    </section>
     <section class="form-container">
+      <div class="title-container">
+        <h1>Employee Registration Form</h1>
+      </div>
       <form action="#">
         <!-- Name Container -->
         <div class="form-control grid">
@@ -47,17 +47,23 @@
         <!-- Phone Number Container -->
         <div class="form-control grid">
           <label for="phone" class="title">Phone Number</label>
-          <input type="number" name="phone" id="phone" required />
+          <input
+            type="number"
+            name="phone"
+            id="phone"
+            placeholder="(000) 000-0000"
+            required
+          />
           <label for="phone" class="small"
             >Please enter a valid phone number.</label
           >
         </div>
 
         <!-- Address Container -->
-        <div class="form-control gap-24">
+        <div class="form-control full gap-16">
           <label for="street" class="title address-title">Address</label>
 
-          <div class="form-flex Full">
+          <div class="form-flex full">
             <input type="text" name="street" id="street" required />
             <label for="street" class="small">Street Address</label>
           </div>
@@ -67,7 +73,7 @@
             <label for="street2" class="small">Street Address Line 2</label>
           </div>
 
-          <div class="form-flex full">
+          <div class="form-control grid m-0 p-0">
             <select name="region" id="region" required>
               <option value="">Select a region</option>
               <option value="ncr">National Capital Region (NCR)</option>
@@ -80,20 +86,27 @@
             <label for="region" class="small">Region</label>
           </div>
 
-          <div class="form-flex grid">
-            <select name="city" id="city" disabled>
+          <div class="form-control grid m-0 p-0">
+            <select name="city" id="city" required disabled>
               <option value="">Select a region first.</option>
             </select>
             <label for="city" class="small">City</label>
           </div>
 
-          <div class="form-flex grid">
-            <input type="text" name="state" id="state" />
-            <label for="state" class="small">State / Province</label>
+          <div class="form-control grid m-0 p-0">
+            <select name="barangay" id="barangay" required disabled>
+              <option value="">Select a city first.</option>
+            </select>
+            <label for="barangay" class="small">Barangay</label>
+          </div>
+
+          <div class="form-control grid m-0 p-0">
+            <input type="text" name="province" id="province" readonly />
+            <label for="province" class="small">State / Province</label>
           </div>
 
           <div class="form-flex full">
-            <input type="text" name="postal" id="postal" />
+            <input type="text" name="postal" id="postal" required />
             <label for="postal" class="small">Postal / Zip Code</label>
           </div>
         </div>
@@ -101,7 +114,7 @@
         <!-- Position Container -->
         <div class="form-control full">
           <label for="position" class="title">Applying Position</label>
-          <input type="text" name="position" id="position" />
+          <input type="text" name="position" id="position" required />
         </div>
 
         <!-- Work Type Container -->
@@ -114,6 +127,7 @@
               name="work_type"
               id="permanent"
               value="permanent"
+              required
             />
             <label for="permanent">Permanent</label>
           </div>
@@ -124,25 +138,54 @@
               name="work_type"
               id="temporary"
               value="temporary"
+              required
             />
             <label for="temporary">Temporary</label>
           </div>
 
           <div class="form-control full m-0 p-0 radio-group">
-            <input type="radio" name="work_type" id="both" value="both" />
+            <input
+              type="radio"
+              name="work_type"
+              id="both"
+              value="both"
+              required
+            />
             <label for="both">Both</label>
           </div>
 
           <div class="form-control full m-0 p-0 radio-group">
-            <input type="radio" name="work_type" id="other" value="other" />
+            <input
+              type="radio"
+              name="work_type"
+              id="other"
+              value="other"
+              required
+            />
             <label for="other">Other</label>
           </div>
         </div>
 
         <!-- Resume Container -->
-        <div class="form-control full">
+        <div class="form-control full form-active">
           <label for="resume" class="title">Please Upload Resume</label>
-          <input type="file" name="resume" id="resume" />
+          <div class="form-flex full file-container" id="file-input">
+            <img
+              src="./icon/material-symbols-light_cloud-upload.png"
+              alt="Upload Icon"
+            />
+            <p class="upload-title">Browse Files</p>
+            <p class="upload-subtitle">Drag and drop files here</p>
+            <input
+              type="file"
+              name="resume"
+              id="resume"
+              multiple
+              required
+              hidden
+            />
+          </div>
+          <div class="file-list-container" id="file-list-container"></div>
         </div>
 
         <!-- Letter Container -->
@@ -170,6 +213,7 @@
               name="veteran-status"
               id="veteran"
               value="veteran"
+              required
             />
             <label for="veteran">I am a veteran</label>
           </div>
@@ -180,6 +224,7 @@
               name="veteran-status"
               id="separated-veteran"
               value="separated-veteran"
+              required
             />
             <label for="separated-veteran"
               >I am a recently separated veteran</label
@@ -192,6 +237,7 @@
               name="veteran-status"
               id="not-veteran"
               value="not-veteran"
+              required
             />
             <label for="not-veteran">I am not a veteran</label>
           </div>
@@ -202,6 +248,7 @@
               name="veteran-status"
               id="disabled-veteran"
               value="disabled-veteran"
+              required
             />
             <label for="disabled-veteran"
               >I am a special disabled veteran</label
@@ -214,6 +261,7 @@
               name="veteran-status"
               id="protected-veteran"
               value="protected-veteran"
+              required
             />
             <label for="protected-veteran"
               >I am an other protected veteran</label
@@ -225,9 +273,10 @@
               type="radio"
               name="veteran-status"
               id="no-answer"
-              value="no-answer"
+              value="no-vet"
+              required
             />
-            <label for="no-answer">Prefer Not The Answer</label>
+            <label for="no-vet">Prefer Not The Answer</label>
           </div>
         </div>
 
@@ -236,12 +285,18 @@
           <label for="female" class="title">Gender</label>
 
           <div class="form-control grid m-0 p-0 radio-group">
-            <input type="radio" name="gender" id="female" value="female" />
+            <input
+              type="radio"
+              name="gender"
+              id="female"
+              value="female"
+              required
+            />
             <label for="female">Female</label>
           </div>
 
           <div class="form-control grid m-0 p-0 radio-group">
-            <input type="radio" name="gender" id="male" value="male" />
+            <input type="radio" name="gender" id="male" value="male" required />
             <label for="male">Male</label>
           </div>
 
@@ -251,6 +306,7 @@
               name="gender"
               id="trans-female"
               value="trans-female"
+              required
             />
             <label for="trans-female">Transgender Female</label>
           </div>
@@ -261,6 +317,7 @@
               name="gender"
               id="trans-male"
               value="trans-male"
+              required
             />
             <label for="trans-male">Transgender Male</label>
           </div>
@@ -269,20 +326,22 @@
             <input
               type="radio"
               name="gender"
-              id="no-answer"
-              value="no-answer"
+              id="no-ans-gender"
+              value="no-ans-gender"
+              required
             />
-            <label for="no-answer">Prefer Not The Answer</label>
+            <label for="no-ans-gender">Prefer Not The Answer</label>
           </div>
 
           <div class="form-control full m-0 p-0 radio-group">
             <input
               type="radio"
               name="gender"
-              id="not-listed"
-              value="not-listed"
+              id="not-listed-gender"
+              value="not-listed-gender"
+              required
             />
-            <label for="not-listed">Not Listed</label>
+            <label for="not-listed-gender">Not Listed</label>
           </div>
         </div>
 
@@ -290,22 +349,24 @@
         <div class="form-control full">
           <label for="no-disability" class="title">Disabilities</label>
 
-          <div class="form-control full m-0 p-0 radio-group">
+          <div class="form-flex full m-0 p-0 radio-group">
             <input
               type="radio"
               name="disablities"
               id="no-disability"
               value="no-disability"
+              required
             />
             <label for="no-disability">I have no disabilities</label>
           </div>
 
-          <div class="form-control full m-0 p-0 radio-group">
+          <div class="form-flex full m-0 p-0 radio-group">
             <input
               type="radio"
               name="disablities"
               id="two-disability"
               value="two-disability"
+              required
             />
             <label for="two-disability"
               >I have two or more impairments and/or disabling medical
@@ -313,12 +374,13 @@
             >
           </div>
 
-          <div class="form-control full m-0 p-0 radio-group">
+          <div class="form-flex full m-0 p-0 radio-group">
             <input
               type="radio"
               name="disablities"
               id="sld-disability"
               value="sld-disability"
+              required
             />
             <label for="sld-disability"
               >I have a Specific Learning Difficulty (e.g.
@@ -326,12 +388,13 @@
             >
           </div>
 
-          <div class="form-control full m-0 p-0 radio-group">
+          <div class="form-flex full m-0 p-0 radio-group">
             <input
               type="radio"
               name="disablities"
               id="social-disability"
               value="social-disability"
+              required
             />
             <label for="social-disability"
               >I have a social/communication impairment such as Asperger's
@@ -339,12 +402,13 @@
             >
           </div>
 
-          <div class="form-control full m-0 p-0 radio-group">
+          <div class="form-flex full m-0 p-0 radio-group">
             <input
               type="radio"
               name="disablities"
               id="lsi-disability"
               value="lsi-disability"
+              required
             />
             <label for="lsi-disability"
               >I have a long standing illness or health condition such as
@@ -352,12 +416,13 @@
             >
           </div>
 
-          <div class="form-control full m-0 p-0 radio-group">
+          <div class="form-flex full m-0 p-0 radio-group">
             <input
               type="radio"
               name="disablities"
               id="physical-disability"
               value="physical-disability"
+              required
             />
             <label for="physical-disability"
               >I have a physical impairment or mobility issues (e.g. difficulty
@@ -365,24 +430,26 @@
             >
           </div>
 
-          <div class="form-control full m-0 p-0 radio-group">
+          <div class="form-flex full m-0 p-0 radio-group">
             <input
               type="radio"
               name="disablities"
               id="hearing-disability"
               value="hearing-disability"
+              required
             />
             <label for="hearing-disability"
               >I am deaf or have a serious hearing impairment</label
             >
           </div>
 
-          <div class="form-control full m-0 p-0 radio-group">
+          <div class="form-flex full m-0 p-0 radio-group">
             <input
               type="radio"
               name="disablities"
               id="visual-disability"
               value="visual-disability"
+              required
             />
             <label for="visual-disability"
               >I am blind or have a serious visual impairment uncorrected by
@@ -390,24 +457,26 @@
             >
           </div>
 
-          <div class="form-control full m-0 p-0 radio-group">
+          <div class="form-flex full m-0 p-0 radio-group">
             <input
               type="radio"
               name="disablities"
-              id="no-answer"
-              value="no-answer"
+              id="no-ans-disability"
+              value="no-ans-disability"
+              required
             />
-            <label for="no-answer">Prefer not to answer</label>
+            <label for="no-ans-disability">Prefer not to answer</label>
           </div>
 
           <div class="form-control full m-0 p-0 radio-group">
             <input
               type="radio"
               name="disablities"
-              id="not-listed"
-              value="not-listed"
+              id="not-listed-disability"
+              value="not-listed-disability"
+              required
             />
-            <label for="not-listed"
+            <label for="not-listed-disability"
               >I have a disability, impairment or medical condition not listed
               here</label
             >
@@ -419,45 +488,75 @@
           <label for="native-am" class="title">Race</label>
 
           <div class="form-control grid m-0 p-0 radio-group">
-            <input type="radio" name="race" id="native-am" value="native-am" />
+            <input
+              type="radio"
+              name="race"
+              id="native-am"
+              value="native-am"
+              required
+            />
             <label for="native-am">American Native or Alaska Native</label>
           </div>
 
           <div class="form-control grid m-0 p-0 radio-group">
-            <input type="radio" name="race" id="asian" value="asian" />
+            <input type="radio" name="race" id="asian" value="asian" required />
             <label for="asian">Asian</label>
           </div>
 
           <div class="form-control grid m-0 p-0 radio-group">
-            <input type="radio" name="race" id="black" value="black" />
+            <input type="radio" name="race" id="black" value="black" required />
             <label for="black">Black or African American</label>
           </div>
 
           <div class="form-control grid m-0 p-0 radio-group">
-            <input type="radio" name="race" id="native-hw" value="native-hw" />
+            <input
+              type="radio"
+              name="race"
+              id="native-hw"
+              value="native-hw"
+              required
+            />
             <label for="native-hw"
               >Native Hawaiian or Other Pacific Islander</label
             >
           </div>
 
           <div class="form-control grid m-0 p-0 radio-group">
-            <input type="radio" name="race" id="white" value="white" />
+            <input type="radio" name="race" id="white" value="white" required />
             <label for="white">White</label>
           </div>
 
           <div class="form-control grid m-0 p-0 radio-group">
-            <input type="radio" name="race" id="two-more" value="two-more" />
+            <input
+              type="radio"
+              name="race"
+              id="two-more"
+              value="two-more"
+              required
+            />
             <label for="two-more">Two or more races</label>
           </div>
 
           <div class="form-control full m-0 p-0 radio-group">
-            <input type="radio" name="race" id="decline" value="decline" />
+            <input
+              type="radio"
+              name="race"
+              id="decline"
+              value="decline"
+              required
+            />
             <label for="decline">Decline to specify</label>
           </div>
 
           <div class="form-control full m-0 p-0 radio-group">
-            <input type="radio" name="race" id="other" value="other" />
-            <label for="other">Other</label>
+            <input
+              type="radio"
+              name="race"
+              id="other-race"
+              value="other-race"
+              required
+            />
+            <label for="other-race">Other</label>
           </div>
         </div>
 
@@ -470,11 +569,13 @@
             placeholder="Type here..."
           ></textarea>
         </div>
-
+        <hr />
         <div class="submit-container">
           <input type="submit" name="submit" />
         </div>
       </form>
     </section>
+
+    <script src="script.js"></script>
   </body>
 </html>
